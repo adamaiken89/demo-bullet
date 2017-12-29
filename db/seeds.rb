@@ -8,7 +8,7 @@
 require 'faker'
 
 companies = [] # create empty array to store objects
-10.times do |i|
+5.times do |i|
   companies << Company.new(
   name: Faker::Company.name,
   )
@@ -17,7 +17,7 @@ Company.import companies, batch_size: 1_000 # or use import!
 
 company_count = ((1..5).to_a)
 employees = [] # create empty array to store objects
-1000.sample.times do |i|
+50.times do |i|
   employees << Employee.new(
   name: Faker::Name.name,
   company_id: company_count.sample
