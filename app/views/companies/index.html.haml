@@ -1,0 +1,25 @@
+%card
+  .card-block
+    %h3.text-center
+      %u #{@with_includes ? "No Issues" : "Have N+1 Queries Issue"}
+    .table-responsive
+      %table.table{style: "width:100%"}
+        %thead
+          %tr
+            %th Company
+            %th.text-center No. of Employees
+            %th.text-center Employee Names
+
+        %tbody
+          -@companies.each do |c|
+            -employees = c.employees
+            %tr
+              %td=c.name
+              %td.text-center=employees.size
+              %td.text-center
+                -if employees.size > 0
+                  %ul.list-unstyled
+                    -c.employees.each do |e|
+                      %li=e.name
+                -else
+                  No Employees.

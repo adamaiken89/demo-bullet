@@ -1,0 +1,5 @@
+.card
+  .card-block.text-center.align-middle{style: "padding:20px;min-height:200px"}   
+    %br 
+    =link_to "With N+1 Issue", companies_path(n_p_1: true), class: "btn btn-primary"
+    =link_to "Without N+1 Issue", companies_path(n_p_1: false), class: "btn btn-primary"
